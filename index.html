@@ -1,0 +1,333 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f6f2e8">
+  <meta name="description" content="Conheça o Jornada pela Bíblia: uma nova experiência de leitura, descobertas e narração em português brasileiro. Aplicativo em desenvolvimento.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Jornada pela Bíblia | Um novo caminho para a leitura">
+  <meta property="og:description" content="Leitura bíblica, descobertas, cards de conhecimento e narração em português brasileiro. Conheça o projeto em desenvolvimento.">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:url" content="https://jornadanabiblia.com.br/">
+  <meta name="color-scheme" content="light">
+  <title>Jornada pela Bíblia — Um novo caminho para a leitura</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <style>
+    :root{--ink:#20373d;--teal:#23444b;--teal2:#305961;--teal3:#446a6a;--light:#f6f2e8;--light2:#eee7d9;--paper:#fffdf7;--muted:#596966;--gold:#b89459;--gold2:#e2cb98;--line:rgba(39,68,66,.15);--shadow:0 24px 75px rgba(35,55,53,.12);--radius:24px}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;font:16px/1.66 -apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;background:var(--light);color:var(--ink);-webkit-font-smoothing:antialiased}
+    ::selection{background:#ded0a9;color:#20373d}
+    a{color:inherit;text-decoration:none}
+    a:focus-visible,button:focus-visible{outline:3px solid #d2a85a;outline-offset:4px}
+    button{font:inherit}
+    img,svg{max-width:100%}
+    .container{width:min(1160px,calc(100% - 48px));margin-inline:auto}
+    .serif{font-family:Georgia,"Times New Roman",serif}
+    .eyebrow{display:inline-flex;gap:9px;align-items:center;letter-spacing:.18em;text-transform:uppercase;font-size:.67rem;font-weight:800;color:#6b786e}
+    .eyebrow:before{content:"";display:inline-block;width:19px;height:1px;background:var(--gold)}
+    .header{position:relative;z-index:10;border-bottom:1px solid rgba(34,66,66,.095);background:#f9f6ef}
+    .header-inner{min-height:88px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+    .brand{display:flex;align-items:center;gap:13px;min-width:0}
+    .brand-symbol{width:46px;height:46px;flex:0 0 46px}
+    .brand-copy{display:flex;flex-direction:column;line-height:1.25;gap:3px}
+    .brand-name{font:700 20px/1.13 Georgia,"Times New Roman",serif;letter-spacing:-.045em;white-space:nowrap}
+    .brand-sub{font-size:9px;text-transform:uppercase;letter-spacing:.21em;color:#74817a;font-weight:700}
+    nav{display:flex;align-items:center;gap:29px}
+    nav a{font-size:13px;font-weight:650;color:#53635f;transition:color .2s}
+    nav a:hover{color:#af8a51}
+    .nav-contact{border:1px solid #d4c9b3;padding:10px 18px;border-radius:100px!important;color:var(--ink)!important;background:rgba(255,255,255,.5)}
+    .hero{overflow:hidden;position:relative;background:radial-gradient(circle at 82% 14%,rgba(205,197,151,.13),transparent 38%),linear-gradient(155deg,#faf7f0 5%,#f4eee2 96%)}
+    .hero:before{content:"";position:absolute;left:-240px;top:110px;width:530px;height:530px;border:1px solid #dac8a556;border-radius:50%;pointer-events:none}
+    .hero:after{content:"";position:absolute;left:-300px;top:50px;width:630px;height:630px;border:1px solid #dac8a545;border-radius:50%;pointer-events:none}
+    .hero-grid{display:grid;grid-template-columns:1fr 1.08fr;min-height:655px;align-items:center;gap:30px;padding-block:63px 70px}
+    .hero-copy{position:relative;z-index:2;padding:10px 0 22px}
+    .status{display:inline-flex;align-items:center;gap:9px;border:1px solid #d9ccb0;background:rgba(255,255,255,.6);padding:6px 13px;border-radius:50px;letter-spacing:.08em;color:#687365;font-size:.64rem;text-transform:uppercase;font-weight:800}
+    .status .sparkle{color:#b49658;font-size:16px;line-height:0}
+    h1,h2,h3,p{margin-top:0}
+    h1{font:400 clamp(3.6rem,5.2vw,5.3rem)/.99 Georgia,"Times New Roman",serif;letter-spacing:-.067em;max-width:630px;margin:27px 0 24px;color:#254249}
+    h1 em{font-weight:400;color:#aa8955;font-style:italic}
+    .hero-lead{max-width:485px;color:#566965;font-size:16px;line-height:1.83;margin-bottom:31px}
+    .btn-group{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+    .btn{min-height:51px;border-radius:50px;display:inline-flex;align-items:center;justify-content:center;padding:12px 21px;gap:15px;font-size:13px;font-weight:800;transition:transform .2s,background-color .2s;cursor:pointer;border:1px solid transparent}
+    .btn:hover{transform:translateY(-2px)}
+    .btn-primary{background:#24474d;color:#fff;box-shadow:0 6px 18px rgba(27,59,62,.13)}
+    .btn-primary:hover{background:#345e63}
+    .btn-ghost{color:#2e5053;border-color:#cac9b8;background:rgba(255,255,255,.35)}
+    .btn-ghost:hover{background:#fff}
+    .hero-foot{display:flex;align-items:center;gap:16px;margin-top:31px;color:#7c8379;font-size:11px}
+    .hero-foot span:first-child{height:1px;background:#c3ad83;width:26px}
+    .hero-visual{position:relative;height:548px;display:flex;align-items:center;justify-content:center}
+    .visual-halo{position:absolute;width:520px;height:520px;border:1px solid rgba(164,139,99,.2);border-radius:50%;top:14px;left:0}
+    .visual-halo:before,.visual-halo:after{content:"";position:absolute;border:1px solid rgba(164,139,99,.14);border-radius:50%;inset:37px}
+    .visual-halo:after{inset:85px}
+    .map-scene{width:min(495px,100%);height:455px;position:relative;border-radius:31px;background:radial-gradient(ellipse at 62% 12%,rgba(234,216,158,.15),transparent 42%),radial-gradient(ellipse at 13% 80%,rgba(166,195,171,.13),transparent 53%),linear-gradient(145deg,#305960,#17363f 81%);box-shadow:0 32px 65px rgba(19,48,51,.22);border:8px solid #f6f2e9;transform:rotate(1.3deg);overflow:hidden}
+    .map-grain{position:absolute;inset:0;opacity:.2;background-image:radial-gradient(#e1ce9e 0.7px,transparent 0.8px);background-size:19px 19px;mask-image:linear-gradient(0deg,black,transparent)}
+    .map-top{position:absolute;left:38px;right:38px;top:32px;display:flex;justify-content:space-between;align-items:center;color:#e4e2cf}
+    .map-top .map-label{font-size:9px;letter-spacing:.2em;text-transform:uppercase;font-weight:700;color:#d3c49d}
+    .map-top .map-counter{font:15px Georgia,serif;color:#f7eccb}
+    .map-line{position:absolute;inset:72px 24px 25px;width:calc(100% - 48px);height:330px;opacity:.9}
+    .map-star{position:absolute;color:#f3db9b;font-size:16px;opacity:.7}
+    .map-star.one{top:105px;left:56px}.map-star.two{top:264px;right:47px}.map-star.three{top:335px;left:120px}
+    .journey-node{position:absolute;display:grid;place-items:center;width:35px;height:35px;border-radius:50%;background:#d8bc78;color:#20414a;box-shadow:0 0 0 8px #d8bc7824,0 0 26px #ffdfa260;font-size:12px}
+    .journey-node.n1{top:135px;left:100px}.journey-node.n2{top:193px;right:95px}.journey-node.n3{bottom:89px;left:110px}
+    .map-caption{position:absolute;left:31px;bottom:26px;color:#dedbba;font-size:10px;letter-spacing:.11em;text-transform:uppercase}
+    .mock-phone{position:absolute;z-index:3;width:236px;height:390px;top:90px;left:42%;transform:translateX(-12%) rotate(-5deg);border:5px solid #d9cbb2;background:#fffaf0;border-radius:31px;box-shadow:0 20px 50px rgba(3,28,31,.38);overflow:hidden;display:flex;flex-direction:column}
+    .mock-speaker{margin:11px auto 6px;width:45px;height:4px;background:#d4cab7;border-radius:10px}
+    .mock-head{display:flex;align-items:center;justify-content:space-between;padding:5px 19px 13px;border-bottom:1px solid #efe7d7;color:#3c5959;font-size:10px}
+    .mock-chapter{font:20px Georgia,serif;padding:14px 19px 5px;line-height:1.2}
+    .mock-sub{color:#8a917c;padding:0 19px;font-size:10px}
+    .mock-para{margin:13px 16px 0;padding:12px 12px;background:#f4eada;border-left:3px solid #d0aa67;border-radius:10px;box-shadow:0 3px 12px #c9a96721;color:#3b5653;font:14px/1.45 Georgia,serif}
+    .mock-para.faded{margin-top:7px;background:none;border-left-color:transparent;box-shadow:none;color:#b2ada0}
+    .mock-progress{margin:auto 17px 12px;color:#788681;font-size:9px}
+    .mock-progress-line{height:4px;border-radius:3px;background:#d9dbcc;margin-top:6px;overflow:hidden}
+    .mock-progress-line span{display:block;width:48%;height:100%;background:#b99a60;border-radius:3px}
+    .mock-button{margin:0 16px 17px;border-radius:30px;background:#2d5556;color:#fff;text-align:center;padding:9px;font-size:10px;font-weight:700}
+    .float-card{position:absolute;z-index:4;background:#fffef8;border:1px solid #e4d6b9;box-shadow:0 12px 27px #23404422;border-radius:15px;padding:11px 14px;display:flex;gap:10px;align-items:center;color:#345056;max-width:225px}
+    .float-card.c1{top:42px;right:-9px;transform:rotate(5deg)}.float-card.c2{bottom:30px;left:-19px;transform:rotate(-5deg)}
+    .float-icon{display:grid;place-items:center;flex:0 0 34px;width:34px;height:34px;border-radius:10px;background:#f0e5cc;color:#ae8950;font-size:22px}
+    .float-card strong{display:block;font-size:10px}.float-card small{display:block;font-size:9px;color:#879084;line-height:1.35}
+    .concept-note{position:absolute;bottom:0;right:2px;color:#8a8f82;font-size:9px;letter-spacing:.03em}
+    .transition{height:68px;background:var(--light);position:relative;overflow:hidden}
+    .transition:before{content:"";display:block;height:95px;border-radius:50% 50% 0 0;background:#fffdf8;width:125%;position:absolute;left:-12%;top:28px}
+    .section{padding:90px 0 104px}
+    .section-white{background:#fffdf8}
+    .section-heading{max-width:690px;margin:0 auto 45px;text-align:center}
+    .section-heading h2{font:400 clamp(2.4rem,3.6vw,3.55rem)/1.13 Georgia,serif;letter-spacing:-.055em;margin:12px 0 14px}
+    .section-heading p{color:#69766f;font-size:15px;max-width:610px;margin:0 auto}
+    .feature-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}
+    .feature-card{padding:29px 24px 25px;border:1px solid #e8e4d9;border-radius:22px;background:#fff;min-height:233px;position:relative;box-shadow:0 9px 34px #495d4b08}
+    .feature-card .feature-icon{width:48px;height:48px;border-radius:14px;background:#f5ecdb;display:grid;place-items:center;color:#b28a4c;margin-bottom:23px;font-size:26px}
+    .feature-card h3{font:22px Georgia,serif;letter-spacing:-.03em;margin-bottom:11px}
+    .feature-card p{color:#748078;font-size:13px;line-height:1.67;margin:0}
+    .feature-card:after{content:"";position:absolute;bottom:0;left:24px;width:53px;height:3px;background:#d7b77c;border-radius:5px 5px 0 0}
+    .reading-section{background:#f5f0e5;overflow:hidden}
+    .reading-layout{display:grid;grid-template-columns:1fr 1.05fr;align-items:center;gap:82px}
+    .reading-copy h2{font:400 clamp(2.5rem,3.6vw,3.7rem)/1.1 Georgia,serif;letter-spacing:-.058em;margin:18px 0 24px}
+    .reading-copy>p{color:#62736b;font-size:15px;line-height:1.9;max-width:435px}
+    .reading-points{display:flex;flex-direction:column;gap:13px;margin-top:27px;color:#46605c;font-size:13px}
+    .reading-points span{display:flex;align-items:center;gap:10px}
+    .reading-points span:before{content:"✦";color:#b99756}
+    .reading-demo{background:#fffdf8;border:1px solid #ebddc2;border-radius:25px;padding:34px 34px 30px;box-shadow:0 24px 60px #6f6a5017;position:relative}
+    .demo-label{font-size:10px;text-transform:uppercase;letter-spacing:.17em;color:#9b845d;font-weight:800}
+    .demo-header{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #ece6d8;padding-bottom:21px;gap:15px}
+    .demo-header h3{font:29px/1.15 Georgia,serif;letter-spacing:-.04em;margin:8px 0 0}
+    .demo-mini{background:#e9e7da;border-radius:100px;padding:6px 11px;color:#718075;font-size:9px;font-weight:750;text-align:center}
+    .demo-paragraphs{padding:19px 0 12px;min-height:229px}
+    .demo-para{font:16px/1.63 Georgia,serif;color:#b6b8aa;border-left:3px solid transparent;padding:9px 16px;margin:4px 0;border-radius:0 12px 12px 0;transition:all .27s}
+    .demo-para.is-active{background:#f7eddd;border-left-color:#c69e5c;color:#294747;box-shadow:0 3px 18px #d8c6a033}
+    .demo-footer{display:flex;justify-content:space-between;align-items:center;gap:15px;padding-top:17px;border-top:1px solid #efe9dd}
+    .demo-progress{color:#8d9286;font-size:11px}
+    .demo-dots{display:flex;gap:6px;margin-top:8px}
+    .demo-dots span{width:26px;height:4px;background:#dedfd3;border-radius:10px}
+    .demo-dots span.is-active{background:#ba975b}
+    .demo-next{border:0;background:#274d51;color:#fff;padding:12px 20px;border-radius:40px;font-size:12px;font-weight:800;cursor:pointer;transition:background .2s}
+    .demo-next:hover{background:#3a6668}
+    .demo-accessibility{font-size:10px;color:#92978a;margin-top:20px}
+    .voice-section{padding:115px 0;background:radial-gradient(circle at 75% 12%,#47666066,transparent 40%),linear-gradient(135deg,#25474f,#15343c 93%);color:#f8f2e3;position:relative;overflow:hidden}
+    .voice-section:before{content:"";position:absolute;width:900px;height:900px;border:1px solid rgba(216,201,150,.12);border-radius:50%;right:-390px;top:-390px;box-shadow:0 0 0 70px #f9e7b408,0 0 0 145px #f9e7b405}
+    .voice-layout{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:85px;align-items:center}
+    .voice-copy .eyebrow{color:#cebd94}.voice-copy h2{font:400 clamp(2.5rem,3.6vw,3.6rem)/1.13 Georgia,serif;letter-spacing:-.058em;margin:15px 0 22px;max-width:550px}
+    .voice-copy h2 em{font-weight:400;color:#dcc28d}
+    .voice-copy p{font-size:14px;line-height:1.92;color:#c9d7cd;max-width:510px}
+    .voice-meta{border-top:1px solid #bed1bb31;display:flex;gap:24px;margin-top:33px;padding-top:22px;flex-wrap:wrap}
+    .voice-meta div strong{display:block;font:29px Georgia,serif;color:#edd9aa}.voice-meta div span{display:block;font-size:10px;color:#b6c9c4;letter-spacing:.045em;margin-top:3px}
+    .sound-card{border:1px solid #f1dca938;background:linear-gradient(153deg,#f7f1dd12,#ffffff08);border-radius:26px;padding:36px 37px 31px;backdrop-filter:blur(4px);box-shadow:0 30px 65px rgba(12,35,38,.2)}
+    .sound-title{display:flex;justify-content:space-between;gap:15px;align-items:center}
+    .sound-title .disc{height:48px;width:48px;border-radius:50%;background:#d8bc88;color:#315054;display:grid;place-items:center;font-size:21px;box-shadow:0 0 0 9px #d8bc8819}
+    .sound-title strong{font:25px Georgia,serif;font-weight:400;display:block}.sound-title small{color:#bdcfc1;font-size:12px}
+    .sound-waves{height:138px;display:flex;gap:5px;align-items:center;justify-content:center;margin:29px -4px 22px;overflow:hidden}
+    .sound-waves i{display:block;flex:1;max-width:7px;border-radius:6px;background:linear-gradient(#e1c994,#899d9a);opacity:.7}
+    .sound-bar{display:flex;align-items:center;justify-content:space-between;border-top:1px solid #ffffff24;padding-top:20px;color:#ced4c4;font-size:11px;gap:15px}
+    .sound-chip{border:1px solid #c5c9a54f;color:#e0d7ac;border-radius:100px;padding:5px 11px;font-size:10px}
+    .sound-disclaimer{color:#b6c8c3;font-size:11px;margin-top:19px;line-height:1.6}
+    .partners{background:#fffdf8}
+    .partner-layout{display:grid;grid-template-columns:.75fr 1.25fr;gap:68px;align-items:start}
+    .partner-title h2{font:400 clamp(2.45rem,3.5vw,3.4rem)/1.12 Georgia,serif;letter-spacing:-.055em;margin:18px 0 18px}
+    .partner-title p{font-size:14px;color:#718078;line-height:1.83}
+    .partner-card{border:1px solid #e3ddd0;background:#fbf8ef;border-radius:22px;padding:34px 35px;box-shadow:0 15px 45px rgba(53,74,58,.05)}
+    .partner-card h3{font:25px Georgia,serif;letter-spacing:-.025em;margin-bottom:16px}
+    .partner-card p{font-size:14px;line-height:1.9;color:#546d67}
+    .partner-facts{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:21px}
+    .fact{border-top:1px solid #d7d0bd;padding-top:14px}
+    .fact strong{display:block;font:25px Georgia,serif;color:#2d5358}
+    .fact small{display:block;font-size:10px;color:#74807a;line-height:1.5}
+    .partner-foot{display:flex;align-items:center;gap:9px;margin-top:22px;color:#8a8878;font-size:11px}
+    .roadmap{background:#f3ecdf}
+    .roadmap-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .roadmap-card{background:#fffdf8;border:1px solid #e7dcc8;border-radius:20px;padding:29px 29px 31px;min-height:226px}
+    .roadmap-number{font:31px Georgia,serif;color:#bd9d60}
+    .roadmap-card h3{font:21px Georgia,serif;margin:24px 0 8px}
+    .roadmap-card p{font-size:13px;color:#6c7b72;line-height:1.7;margin:0}
+    .roadmap-pill{margin-top:16px;display:inline-flex;color:#7e7e6e;border:1px solid #ddd2bd;border-radius:50px;padding:4px 10px;font-size:10px}
+    .contact-section{background:#e5ddcc;padding:75px 0 88px}
+    .contact-box{display:flex;justify-content:space-between;align-items:center;gap:35px}
+    .contact-box h2{font:400 clamp(2.2rem,3.2vw,3.25rem)/1.13 Georgia,serif;letter-spacing:-.05em;margin:15px 0 13px}
+    .contact-box p{font-size:14px;color:#637168;max-width:550px;margin-bottom:0}
+    .contact-link{display:inline-flex;align-items:center;justify-content:center;gap:9px;border:1px solid #3c6260;background:#2b5153;color:#fff;padding:16px 23px;border-radius:50px;font-size:13px;font-weight:800;white-space:nowrap}
+    .contact-link:hover{background:#3c6465}
+    footer{padding:27px 0 31px;background:#1c353a;color:#bec9bf}
+    .footer-row{display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .footer-brand{font:21px Georgia,serif;color:#f0e5c8}
+    footer small{font-size:11px;color:#b0beb5;text-align:right;line-height:1.55;max-width:585px}
+    @media(max-width:1100px){.visual-halo{left:-35px}.float-card.c1{right:-8px}.hero-grid{gap:10px}.reading-layout,.voice-layout{gap:44px}}
+    @media(max-width:950px){nav{gap:14px}.hero-grid{grid-template-columns:1fr;padding-block:65px 50px;gap:35px}.hero-copy{text-align:center}.hero-copy h1,.hero-lead{margin-left:auto;margin-right:auto}.btn-group,.hero-foot{justify-content:center}.hero-visual{width:min(570px,100%);margin:auto;height:520px}.map-scene{height:440px}.visual-halo{left:20px}.feature-grid{grid-template-columns:repeat(2,1fr)}.reading-layout{grid-template-columns:1fr;gap:43px}.reading-copy{text-align:center}.reading-copy>p{margin-inline:auto}.reading-points{align-items:center}.reading-demo{max-width:600px;width:100%;margin:auto}.voice-layout,.partner-layout{grid-template-columns:1fr;gap:38px}.voice-copy{text-align:center}.voice-copy p{margin-inline:auto}.voice-meta{justify-content:center}.sound-card{max-width:590px;width:100%;margin:auto}.partner-title{text-align:center}.roadmap-grid{grid-template-columns:repeat(3,1fr)}}
+    @media(max-width:700px){.container{width:min(100% - 30px,580px)}.header-inner{min-height:74px}.brand-symbol{width:37px;height:37px;flex-basis:37px}.brand-name{font-size:17px}.brand-sub{font-size:8px}nav a:not(.nav-contact){display:none}nav .nav-contact{padding:8px 13px;font-size:11px}.hero-grid{padding-top:53px}.hero-copy h1{font-size:clamp(3.15rem,12vw,4.1rem);margin-top:23px}.hero-lead{font-size:15px}.hero-visual{height:435px;max-width:490px}.map-scene{height:395px;width:92%;border-width:6px}.visual-halo{height:435px;width:435px;left:calc(50% - 217px);top:3px}.mock-phone{width:189px;height:335px;left:40%;top:75px;border-width:4px}.mock-chapter{font-size:18px}.mock-para{font-size:12px}.mock-para.faded{font-size:11px}.float-card{padding:8px 10px;max-width:179px}.float-card.c1{right:-1px;top:18px}.float-card.c2{left:0;bottom:14px}.float-icon{height:29px;width:29px;flex-basis:29px}.float-card small{font-size:8px}.section{padding:72px 0 76px}.section-heading{margin-bottom:28px}.section-heading h2{font-size:2.4rem}.feature-grid,.roadmap-grid{grid-template-columns:1fr;gap:11px}.feature-card{min-height:0;padding:22px 25px}.feature-card .feature-icon{margin-bottom:12px}.feature-card h3{font-size:22px;margin-bottom:6px}.reading-copy h2,.voice-copy h2,.partner-title h2{font-size:2.5rem}.reading-demo{padding:24px 17px}.demo-para{font-size:14px;padding:8px 11px}.demo-paragraphs{min-height:225px}.voice-section{padding:85px 0}.voice-meta{gap:22px}.sound-card{padding:28px 21px}.sound-title strong{font-size:21px}.sound-waves{height:96px}.partner-card{padding:27px 23px}.partner-facts{gap:8px}.fact strong{font-size:21px}.contact-box{flex-direction:column;align-items:flex-start;gap:28px}.contact-section{padding:68px 0}.contact-link{white-space:normal;word-break:break-word;text-align:center}.footer-row{flex-direction:column;align-items:flex-start}footer small{text-align:left}.concept-note{font-size:8px;bottom:-7px}}
+    @media(max-width:405px){.brand-name{font-size:16px}.header .nav-contact{font-size:10px;padding:7px 11px}.map-scene{height:375px}.hero-visual{height:415px}.mock-phone{left:37%;transform:translateX(-13%) rotate(-5deg)}.float-card.c1{right:-7px}.float-card.c2{left:-3px}.feature-grid{gap:11px}.hero-copy h1{font-size:3.03rem}}
+    @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="container header-inner">
+      <a class="brand" href="#inicio" aria-label="Jornada pela Bíblia — ir para o início">
+        <svg class="brand-symbol" viewBox="0 0 48 48" aria-hidden="true">
+          <circle cx="24" cy="24" r="23" fill="#254951"/><circle cx="24" cy="24" r="19.6" fill="none" stroke="#bea16e" stroke-width=".8" opacity=".7"/>
+          <path d="M11 28c4-2.1 8.3-1.8 13 1.2 4.7-3 9-3.3 13-1.2v-9c-4-2.3-8.5-2.3-13 .9-4.5-3.2-9-3.2-13-.9v9z" fill="none" stroke="#f3e7c5" stroke-width="1.4" stroke-linejoin="round"/>
+          <path d="M24 20v9M24 10v4.5M19.6 13l4.4-4.5 4.4 4.5" stroke="#d8b983" stroke-width="1.5" stroke-linecap="round"/>
+          <path d="M15 32.2q4.6-1.1 9 2.2 4.6-3.3 9-2.2" fill="none" stroke="#d8b983" stroke-width=".9" opacity=".7"/>
+        </svg>
+        <span class="brand-copy"><span class="brand-name">Jornada pela Bíblia</span><span class="brand-sub">LEITURA · DESCOBERTA · PROPÓSITO</span></span>
+      </a>
+      <nav aria-label="Navegação principal">
+        <a href="#experiencia">A experiência</a>
+        <a href="#leitura">Leitura</a>
+        <a href="#voz">Narração</a>
+        <a href="#parceiros">Para parceiros</a>
+        <a class="nav-contact" href="#contato">Contato ↗</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio" aria-labelledby="hero-title">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <span class="status"><span class="sparkle" aria-hidden="true">✦</span> Um novo caminho está sendo preparado</span>
+          <h1 id="hero-title">A Bíblia é uma jornada. <em>Viva cada descoberta.</em></h1>
+          <p class="hero-lead">Uma experiência de leitura que une atenção, aprendizado e pequenas descobertas. Um espaço para avançar no seu ritmo e construir uma relação mais profunda com a Palavra.</p>
+          <div class="btn-group">
+            <a class="btn btn-primary" href="#experiencia">Conheça a proposta <span aria-hidden="true">↗</span></a>
+            <a class="btn btn-ghost" href="#parceiros">Visão do projeto <span aria-hidden="true">↓</span></a>
+          </div>
+          <div class="hero-foot"><span aria-hidden="true"></span> <span>Aplicativo em desenvolvimento · Prévia conceitual</span></div>
+        </div>
+        <div class="hero-visual" aria-label="Ilustração conceitual de uma interface com mapa de descobertas e leitura em destaque">
+          <div class="visual-halo" aria-hidden="true"></div>
+          <div class="map-scene" aria-hidden="true">
+            <div class="map-grain"></div>
+            <div class="map-top"><span class="map-label">Seu caminho</span><span class="map-counter">Descobertas</span></div>
+            <svg class="map-line" viewBox="0 0 430 330" fill="none">
+              <path d="M60 95 C100 30 190 50 234 130 S318 171 365 109 S337 259 222 270 S111 251 81 206" stroke="#ccb77e" stroke-width="1.1" stroke-dasharray="4 7" opacity=".4"/>
+              <path d="M60 95 C112 46 173 63 232 133 S293 188 334 164" stroke="#e2cf9a" stroke-width="2.3" stroke-linecap="round"/>
+              <circle cx="60" cy="95" r="7" fill="#e6d299"/><circle cx="232" cy="133" r="6" fill="#e6d299"/><circle cx="334" cy="164" r="7" fill="#e6d299"/>
+              <circle cx="222" cy="270" r="5" stroke="#bba877" opacity=".4"/><circle cx="81" cy="206" r="5" stroke="#bba877" opacity=".4"/>
+            </svg>
+            <span class="map-star one">✧</span><span class="map-star two">✧</span><span class="map-star three">✧</span>
+            <span class="journey-node n1">✦</span><span class="journey-node n2">✦</span><span class="journey-node n3">✧</span>
+            <span class="map-caption">Um passo de cada vez</span>
+          </div>
+          <div class="mock-phone" aria-hidden="true">
+            <div class="mock-speaker"></div>
+            <div class="mock-head"><span>‹ &nbsp; Jornada</span><span>◌ &nbsp; Leitura</span></div>
+            <div class="mock-chapter">Uma leitura<br>com presença</div>
+            <div class="mock-sub">Experiência conceitual · trecho demonstrativo</div>
+            <div class="mock-para">Cada passo convida a olhar com mais atenção para o caminho que se revela.</div>
+            <div class="mock-para faded">Siga no seu ritmo e deixe que a próxima etapa se ilumine.</div>
+            <div class="mock-progress">Progresso da leitura · 48%<div class="mock-progress-line"><span></span></div></div>
+            <div class="mock-button">Avançar no caminho &nbsp; →</div>
+          </div>
+          <div class="float-card c1" aria-hidden="true"><span class="float-icon">✧</span><span><strong>Uma nova luz</strong><small>Descoberta registrada</small></span></div>
+          <div class="float-card c2" aria-hidden="true"><span class="float-icon">◈</span><span><strong>Card de conhecimento</strong><small>Seu aprendizado ganha forma</small></span></div>
+          <div class="concept-note">Ilustração conceitual · Não é uma captura real do aplicativo</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-white" id="experiencia" aria-labelledby="experience-title">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">Uma jornada de descobertas</span>
+          <h2 id="experience-title">Uma experiência feita para <em>viver o caminho.</em></h2>
+          <p>Um projeto que combina a profundidade da leitura bíblica com interfaces interativas e recompensas simbólicas, sem tirar o foco do texto.</p>
+        </div>
+        <div class="feature-grid">
+          <article class="feature-card"><div class="feature-icon" aria-hidden="true">☷</div><h3>Leitura guiada</h3><p>Avance trecho a trecho, com foco visual e espaço para ler com calma.</p></article>
+          <article class="feature-card"><div class="feature-icon" aria-hidden="true">✧</div><h3>Mapa da jornada</h3><p>Visualize descobertas e acompanhe seu caminho de leitura.</p></article>
+          <article class="feature-card"><div class="feature-icon" aria-hidden="true">◈</div><h3>Cards de saber</h3><p>Guarde aprendizados em uma coleção inspirada nas passagens.</p></article>
+          <article class="feature-card"><div class="feature-icon" aria-hidden="true">♬</div><h3>Leitura em áudio</h3><p>O projeto prevê uma narração acolhedora em português brasileiro.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section reading-section" id="leitura" aria-labelledby="reading-title">
+      <div class="container reading-layout">
+        <div class="reading-copy">
+          <span class="eyebrow">Experimente a proposta</span>
+          <h2 id="reading-title">Uma leitura que acompanha <em>seu ritmo.</em></h2>
+          <p>O coração do Jornada é o modo de leitura por etapas: o trecho em foco ganha luz enquanto os próximos aguardam. A interação abaixo é uma demonstração de interface, não uma passagem bíblica oficial.</p>
+          <div class="reading-points"><span>Clareza para manter a atenção</span><span>Avanço consciente, trecho a trecho</span><span>Interface pensada para acolher</span></div>
+        </div>
+        <div class="reading-demo">
+          <div class="demo-header"><div><span class="demo-label">Prévia interativa</span><h3>O próximo passo</h3></div><span class="demo-mini">Modo leitura</span></div>
+          <div class="demo-paragraphs" id="reading-paragraphs" aria-live="polite">
+            <p class="demo-para is-active" data-step="0">A jornada começa com um gesto simples: reservar um momento e voltar a atenção para a leitura.</p>
+            <p class="demo-para" data-step="1">A cada etapa, uma nova oportunidade de aprender, refletir e perceber detalhes do caminho.</p>
+            <p class="demo-para" data-step="2">O progresso é construído com constância — uma pequena descoberta de cada vez.</p>
+          </div>
+          <div class="demo-footer"><div class="demo-progress"><span id="demo-counter">Trecho 1 de 3</span><div class="demo-dots" aria-hidden="true"><span class="is-active"></span><span></span><span></span></div></div><button id="demo-next" class="demo-next" type="button">Avançar trecho &nbsp; →</button></div>
+          <div class="demo-accessibility">Demonstração conceitual. Os textos acima são originais da apresentação, não versículos bíblicos.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="voice-section" id="voz" aria-labelledby="voice-title">
+      <div class="container voice-layout">
+        <div class="voice-copy">
+          <span class="eyebrow">Voz, presença e tecnologia</span>
+          <h2 id="voice-title">Quando a leitura ganha <em>uma voz.</em></h2>
+          <p>A narração não é um detalhe do produto: é parte central da experiência que estamos construindo. O objetivo é permitir que a pessoa leia, escute e acompanhe cada capítulo com clareza, naturalidade e controle do próprio ritmo.</p>
+          <p>Já criamos e testamos uma voz personalizada em português brasileiro com recursos da ElevenLabs. A ampliação da biblioteca de áudio dependerá de validações técnicas, editoriais e de licenciamento.</p>
+          <div class="voice-meta"><div><strong>66</strong><span>Livros na meta de cobertura</span></div><div><strong>1.189</strong><span>Capítulos na meta de cobertura</span></div><div><strong>pt-BR</strong><span>Narração em prototipagem</span></div></div>
+        </div>
+        <div class="sound-card">
+          <div class="sound-title"><div><strong>Voz Jornada</strong><small>Presença Compassiva · Protótipo</small></div><div class="disc" aria-hidden="true">♫</div></div>
+          <div class="sound-waves" aria-hidden="true" id="waveform"></div>
+          <div class="sound-bar"><span>Experiência de narração planejada</span><span class="sound-chip">ElevenLabs · testes de voz</span></div>
+          <div class="sound-disclaimer">A visualização de ondas é ilustrativa. Esta página não reproduz áudio nem afirma parceria, patrocínio ou aprovação da ElevenLabs.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section partners" id="parceiros" aria-labelledby="partners-title">
+      <div class="container partner-layout">
+        <div class="partner-title"><span class="eyebrow">Para parceiros e avaliadores</span><h2 id="partners-title">A visão por trás do <em>Jornada.</em></h2><p>Além de apresentar o universo visual do aplicativo, esta página reúne informações objetivas sobre nosso uso de voz e nossa proposta de longo prazo.</p><p>O projeto está em desenvolvimento. Não há lançamento público ou faturamento por assinaturas anunciado.</p></div>
+        <div class="partner-card" lang="en"><span class="demo-label">PROJECT OVERVIEW · ENGLISH</span><h3>An accessible Bible-reading experience, built for the long term.</h3><p>Jornada pela Bíblia is a Brazilian mobile-first Bible-reading and interactive learning product for adults, currently in development. Its experience combines focused reading, discovery maps, collectible learning cards and progress across chapters.</p><p>Voice is a core feature. We have designed and tested a custom Brazilian Portuguese narrator using ElevenLabs Voice Design and Eleven v4. Our planned use case is a quality-controlled chapter audio library with synchronized text and audio, accessible playback and selective offline listening. Editorial and licensing validation will precede broader distribution.</p><p>The long-term business strategy includes a planned premium subscription for enhanced audio and learning features, with potential expansion into licensed audiobooks and original educational audiovisual content.</p><div class="partner-facts"><div class="fact"><strong>pt-BR</strong><small>Custom voice prototype tested</small></div><div class="fact"><strong>66</strong><small>Books in planned audio scope</small></div><div class="fact"><strong>1,189</strong><small>Chapters in planned audio scope</small></div></div><div class="partner-foot">✦ &nbsp; Under active development · No public release date announced</div></div>
+      </div>
+    </section>
+
+    <section class="section roadmap" id="desenvolvimento" aria-labelledby="roadmap-title">
+      <div class="container"><div class="section-heading"><span class="eyebrow">Desenvolvimento responsável</span><h2 id="roadmap-title">Construindo cada etapa <em>com propósito.</em></h2><p>O Jornada evolui por ciclos de desenvolvimento, testes e revisão de conteúdo antes de disponibilizar novos recursos ao público.</p></div>
+        <div class="roadmap-grid"><article class="roadmap-card"><span class="roadmap-number">01</span><h3>Leitura e interação</h3><p>Fluxos de leitura e experiências de descoberta em prototipagem e testes.</p><span class="roadmap-pill">Protótipo em evolução</span></article><article class="roadmap-card"><span class="roadmap-number">02</span><h3>Narração brasileira</h3><p>Voz personalizada já testada; integração e validação de áudio em planejamento.</p><span class="roadmap-pill">Voz em testes</span></article><article class="roadmap-card"><span class="roadmap-number">03</span><h3>Biblioteca e expansão</h3><p>Cobertura progressiva, revisão editorial, acessibilidade e serviços futuros.</p><span class="roadmap-pill">Expansão planejada</span></article></div>
+      </div>
+    </section>
+
+    <section class="contact-section" id="contato" aria-labelledby="contact-title"><div class="container contact-box"><div><span class="eyebrow">Converse com o projeto</span><h2 id="contact-title">Toda grande jornada começa <em>com um encontro.</em></h2><p>Para avaliação institucional, parcerias e informações sobre o desenvolvimento do Jornada, entre em contato pelo e-mail corporativo.</p></div><a class="contact-link" href="mailto:alexsandrofreitas@jornadanabiblia.com.br?subject=Contato%20institucional%20-%20Jornada%20pela%20B%C3%ADblia">Entrar em contato <span aria-hidden="true">↗</span></a></div></section>
+  </main>
+  <footer><div class="container footer-row"><div class="footer-brand">Jornada pela Bíblia</div><small>Projeto brasileiro independente em desenvolvimento · Recife, Pernambuco<br>Prévia conceitual para apresentação institucional. Recursos podem mudar antes do lançamento.</small></div></footer>
+  <script>
+    (function(){
+      const demo=document.querySelectorAll('.demo-para');
+      const dots=document.querySelectorAll('.demo-dots span');
+      const next=document.getElementById('demo-next');
+      const counter=document.getElementById('demo-counter');
+      let step=0;
+      if(next && demo.length===3){next.addEventListener('click',()=>{step=(step+1)%demo.length;demo.forEach((el,i)=>el.classList.toggle('is-active',i===step));dots.forEach((el,i)=>el.classList.toggle('is-active',i===step));counter.textContent='Trecho '+(step+1)+' de '+demo.length;next.textContent=step===demo.length-1?'Recomeçar leitura  ↺':'Avançar trecho  →';});}
+      const heights=[19,33,51,28,67,95,71,34,47,77,112,84,55,31,40,76,105,68,40,28,60,95,76,45,20,32,53,83,61,38,19,47,74,56,30,15];
+      const wave=document.getElementById('waveform');
+      if(wave){heights.forEach(n=>{const i=document.createElement('i');i.style.height=n+'px';wave.appendChild(i);});}
+    })();
+  </script>
+</body>
+</html>
