@@ -6,7 +6,7 @@ Site estatico provisorio de apresentacao do projeto Jornada pela Biblia, atualme
 - `favicon.svg`: identificacao grafica conceitual.
 - `robots.txt`: orientacao basica para indexacao.
 
-O site nao usa backend nem inclui o codigo-fonte do aplicativo. A integracao de voz da ElevenLabs e apresentada como prototipo e plano futuro, nao como parceria aprovada ou servico lancado.
+O site nao usa backend nem inclui o codigo-fonte do aplicativo. A integracao de voz permanece em prototipagem. O projeto informou sua aceitacao no programa ElevenLabs Grants, exibida na secao de parceiros com a marca oficial fornecida por CDN e link para o programa. Isso nao representa endosso editorial ou lancamento publico do servico. A imagem depende da disponibilidade do CDN da ElevenLabs.
 
 Para publicar no GitHub Pages, configure Settings > Pages > Build and deployment > Deploy from a branch > main > /(root).
 
