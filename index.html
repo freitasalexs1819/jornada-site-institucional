@@ -154,6 +154,12 @@
     .fact strong{display:block;font:25px Georgia,serif;color:#2d5358}
     .fact small{display:block;font-size:10px;color:#74807a;line-height:1.5}
     .partner-foot{display:flex;align-items:center;gap:9px;margin-top:22px;color:#8a8878;font-size:11px}
+    .grants-callout{display:flex;align-items:center;gap:34px;margin-top:38px;padding:26px 30px;background:#f9f5ec;border:1px solid #e2d9c9;border-radius:20px}
+    .grants-logo-link{display:block;flex:0 0 min(290px,34%);max-width:100%;padding:12px 0;border-radius:8px}
+    .grants-logo{display:block;width:100%;height:auto}
+    .grants-logo-link:focus-visible{outline:3px solid #bb9860;outline-offset:4px}
+    .grants-content strong{display:block;font-size:18px;line-height:1.4;color:#2b5053}
+    .grants-content p{font-size:13px;line-height:1.75;color:#63736b;margin:8px 0 0}
     .roadmap{background:#f3ecdf}
     .roadmap-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
     .roadmap-card{background:#fffdf8;border:1px solid #e7dcc8;border-radius:20px;padding:29px 29px 31px;min-height:226px}
@@ -174,6 +180,7 @@
     @media(max-width:1100px){.visual-halo{left:-35px}.float-card.c1{right:-8px}.hero-grid{gap:10px}.reading-layout,.voice-layout{gap:44px}}
     @media(max-width:950px){nav{gap:14px}.hero-grid{grid-template-columns:1fr;padding-block:65px 50px;gap:35px}.hero-copy{text-align:center}.hero-copy h1,.hero-lead{margin-left:auto;margin-right:auto}.btn-group,.hero-foot{justify-content:center}.hero-visual{width:min(570px,100%);margin:auto;height:520px}.map-scene{height:440px}.visual-halo{left:20px}.feature-grid{grid-template-columns:repeat(2,1fr)}.reading-layout{grid-template-columns:1fr;gap:43px}.reading-copy{text-align:center}.reading-copy>p{margin-inline:auto}.reading-points{align-items:center}.reading-demo{max-width:600px;width:100%;margin:auto}.voice-layout,.partner-layout{grid-template-columns:1fr;gap:38px}.voice-copy{text-align:center}.voice-copy p{margin-inline:auto}.voice-meta{justify-content:center}.sound-card{max-width:590px;width:100%;margin:auto}.partner-title{text-align:center}.roadmap-grid{grid-template-columns:repeat(3,1fr)}}
     @media(max-width:700px){.container{width:min(100% - 30px,580px)}.header-inner{min-height:74px}.brand-symbol{width:37px;height:37px;flex-basis:37px}.brand-name{font-size:17px}.brand-sub{font-size:8px}nav a:not(.nav-contact){display:none}nav .nav-contact{padding:8px 13px;font-size:11px}.hero-grid{padding-top:53px}.hero-copy h1{font-size:clamp(3.15rem,12vw,4.1rem);margin-top:23px}.hero-lead{font-size:15px}.hero-visual{height:435px;max-width:490px}.map-scene{height:395px;width:92%;border-width:6px}.visual-halo{height:435px;width:435px;left:calc(50% - 217px);top:3px}.mock-phone{width:189px;height:335px;left:40%;top:75px;border-width:4px}.mock-chapter{font-size:18px}.mock-para{font-size:12px}.mock-para.faded{font-size:11px}.float-card{padding:8px 10px;max-width:179px}.float-card.c1{right:-1px;top:18px}.float-card.c2{left:0;bottom:14px}.float-icon{height:29px;width:29px;flex-basis:29px}.float-card small{font-size:8px}.section{padding:72px 0 76px}.section-heading{margin-bottom:28px}.section-heading h2{font-size:2.4rem}.feature-grid,.roadmap-grid{grid-template-columns:1fr;gap:11px}.feature-card{min-height:0;padding:22px 25px}.feature-card .feature-icon{margin-bottom:12px}.feature-card h3{font-size:22px;margin-bottom:6px}.reading-copy h2,.voice-copy h2,.partner-title h2{font-size:2.5rem}.reading-demo{padding:24px 17px}.demo-para{font-size:14px;padding:8px 11px}.demo-paragraphs{min-height:225px}.voice-section{padding:85px 0}.voice-meta{gap:22px}.sound-card{padding:28px 21px}.sound-title strong{font-size:21px}.sound-waves{height:96px}.partner-card{padding:27px 23px}.partner-facts{gap:8px}.fact strong{font-size:21px}.contact-box{flex-direction:column;align-items:flex-start;gap:28px}.contact-section{padding:68px 0}.contact-link{white-space:normal;word-break:break-word;text-align:center}.footer-row{flex-direction:column;align-items:flex-start}footer small{text-align:left}.concept-note{font-size:8px;bottom:-7px}}
+    @media(max-width:700px){.grants-callout{flex-direction:column;gap:17px;padding:23px 20px;text-align:center}.grants-logo-link{width:min(270px,100%);flex:none}.grants-content strong{font-size:17px}}
     @media(max-width:405px){.brand-name{font-size:16px}.header .nav-contact{font-size:10px;padding:7px 11px}.map-scene{height:375px}.hero-visual{height:415px}.mock-phone{left:37%;transform:translateX(-13%) rotate(-5deg)}.float-card.c1{right:-7px}.float-card.c2{left:-3px}.feature-grid{gap:11px}.hero-copy h1{font-size:3.03rem}}
     @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
   </style>
@@ -295,7 +302,7 @@
           <div class="sound-title"><div><strong>Voz Jornada</strong><small>Presença Compassiva · Protótipo</small></div><div class="disc" aria-hidden="true">♫</div></div>
           <div class="sound-waves" aria-hidden="true" id="waveform"></div>
           <div class="sound-bar"><span>Experiência de narração planejada</span><span class="sound-chip">ElevenLabs · testes de voz</span></div>
-          <div class="sound-disclaimer">A visualização de ondas é ilustrativa. Esta página não reproduz áudio nem afirma parceria, patrocínio ou aprovação da ElevenLabs.</div>
+          <div class="sound-disclaimer">A visualização de ondas é ilustrativa. Esta página não reproduz áudio. A participação no ElevenLabs Grants não representa aprovação editorial do conteúdo bíblico pela ElevenLabs.</div>
         </div>
       </div>
     </section>
@@ -304,6 +311,17 @@
       <div class="container partner-layout">
         <div class="partner-title"><span class="eyebrow">Para parceiros e avaliadores</span><h2 id="partners-title">A visão por trás do <em>Jornada.</em></h2><p>Além de apresentar o universo visual do aplicativo, esta página reúne informações objetivas sobre nosso uso de voz e nossa proposta de longo prazo.</p><p>O projeto está em desenvolvimento. Não há lançamento público ou faturamento por assinaturas anunciado.</p></div>
         <div class="partner-card" lang="en"><span class="demo-label">PROJECT OVERVIEW · ENGLISH</span><h3>An accessible Bible-reading experience, built for the long term.</h3><p>Jornada pela Bíblia is a Brazilian mobile-first Bible-reading and interactive learning product for adults, currently in development. Its experience combines focused reading, discovery maps, collectible learning cards and progress across chapters.</p><p>Voice is a core feature. We have designed and tested a custom Brazilian Portuguese narrator using ElevenLabs Voice Design and Eleven v4. Our planned use case is a quality-controlled chapter audio library with synchronized text and audio, accessible playback and selective offline listening. Editorial and licensing validation will precede broader distribution.</p><p>The long-term business strategy includes a planned premium subscription for enhanced audio and learning features, with potential expansion into licensed audiobooks and original educational audiovisual content.</p><div class="partner-facts"><div class="fact"><strong>pt-BR</strong><small>Custom voice prototype tested</small></div><div class="fact"><strong>66</strong><small>Books in planned audio scope</small></div><div class="fact"><strong>1,189</strong><small>Chapters in planned audio scope</small></div></div><div class="partner-foot">✦ &nbsp; Under active development · No public release date announced</div></div>
+      </div>
+      <div class="container">
+        <aside class="grants-callout" aria-label="Participação no programa ElevenLabs Grants">
+          <a class="grants-logo-link" href="https://elevenlabs.io/startup-grants" target="_blank" rel="noopener noreferrer" aria-label="Conheça o programa ElevenLabs Grants no site oficial">
+            <img class="grants-logo" src="https://eleven-public-cdn.elevenlabs.io/payloadcms/pwsc4vchsqt-ElevenLabsGrants.webp" alt="Logomarca ElevenLabs Grants" loading="lazy" decoding="async">
+          </a>
+          <div class="grants-content">
+            <strong>Jornada pela Bíblia no ElevenLabs Grants</strong>
+            <p>O Jornada pela Bíblia foi aceito no programa ElevenLabs Grants, iniciativa de apoio a projetos que desenvolvem experiências com tecnologia de voz. A participação não implica endosso editorial pela ElevenLabs.</p>
+          </div>
+        </aside>
       </div>
     </section>
 
