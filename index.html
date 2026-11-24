@@ -177,9 +177,15 @@
     .footer-row{display:flex;align-items:center;justify-content:space-between;gap:20px}
     .footer-brand{font:21px Georgia,serif;color:#f0e5c8}
     footer small{font-size:11px;color:#b0beb5;text-align:right;line-height:1.55;max-width:585px}
+    .footer-grants{display:flex;align-items:center;justify-content:center;gap:24px;margin-top:25px;padding-top:24px;border-top:1px solid rgba(240,229,200,.18)}
+    .footer-grants-note{font-size:12px;line-height:1.55;color:#bec9bf}
+    .footer-grants-link{display:block;flex:none;box-sizing:border-box;width:255px;max-width:100%;padding:24px 25px;border-radius:12px;background:#f9f5ec}
+    .footer-grants-link img{display:block;width:100%;height:auto}
+    .footer-grants-link:focus-visible{outline:3px solid #e2cb98;outline-offset:4px}
     @media(max-width:1100px){.visual-halo{left:-35px}.float-card.c1{right:-8px}.hero-grid{gap:10px}.reading-layout,.voice-layout{gap:44px}}
     @media(max-width:950px){nav{gap:14px}.hero-grid{grid-template-columns:1fr;padding-block:65px 50px;gap:35px}.hero-copy{text-align:center}.hero-copy h1,.hero-lead{margin-left:auto;margin-right:auto}.btn-group,.hero-foot{justify-content:center}.hero-visual{width:min(570px,100%);margin:auto;height:520px}.map-scene{height:440px}.visual-halo{left:20px}.feature-grid{grid-template-columns:repeat(2,1fr)}.reading-layout{grid-template-columns:1fr;gap:43px}.reading-copy{text-align:center}.reading-copy>p{margin-inline:auto}.reading-points{align-items:center}.reading-demo{max-width:600px;width:100%;margin:auto}.voice-layout,.partner-layout{grid-template-columns:1fr;gap:38px}.voice-copy{text-align:center}.voice-copy p{margin-inline:auto}.voice-meta{justify-content:center}.sound-card{max-width:590px;width:100%;margin:auto}.partner-title{text-align:center}.roadmap-grid{grid-template-columns:repeat(3,1fr)}}
     @media(max-width:700px){.container{width:min(100% - 30px,580px)}.header-inner{min-height:74px}.brand-symbol{width:37px;height:37px;flex-basis:37px}.brand-name{font-size:17px}.brand-sub{font-size:8px}nav a:not(.nav-contact){display:none}nav .nav-contact{padding:8px 13px;font-size:11px}.hero-grid{padding-top:53px}.hero-copy h1{font-size:clamp(3.15rem,12vw,4.1rem);margin-top:23px}.hero-lead{font-size:15px}.hero-visual{height:435px;max-width:490px}.map-scene{height:395px;width:92%;border-width:6px}.visual-halo{height:435px;width:435px;left:calc(50% - 217px);top:3px}.mock-phone{width:189px;height:335px;left:40%;top:75px;border-width:4px}.mock-chapter{font-size:18px}.mock-para{font-size:12px}.mock-para.faded{font-size:11px}.float-card{padding:8px 10px;max-width:179px}.float-card.c1{right:-1px;top:18px}.float-card.c2{left:0;bottom:14px}.float-icon{height:29px;width:29px;flex-basis:29px}.float-card small{font-size:8px}.section{padding:72px 0 76px}.section-heading{margin-bottom:28px}.section-heading h2{font-size:2.4rem}.feature-grid,.roadmap-grid{grid-template-columns:1fr;gap:11px}.feature-card{min-height:0;padding:22px 25px}.feature-card .feature-icon{margin-bottom:12px}.feature-card h3{font-size:22px;margin-bottom:6px}.reading-copy h2,.voice-copy h2,.partner-title h2{font-size:2.5rem}.reading-demo{padding:24px 17px}.demo-para{font-size:14px;padding:8px 11px}.demo-paragraphs{min-height:225px}.voice-section{padding:85px 0}.voice-meta{gap:22px}.sound-card{padding:28px 21px}.sound-title strong{font-size:21px}.sound-waves{height:96px}.partner-card{padding:27px 23px}.partner-facts{gap:8px}.fact strong{font-size:21px}.contact-box{flex-direction:column;align-items:flex-start;gap:28px}.contact-section{padding:68px 0}.contact-link{white-space:normal;word-break:break-word;text-align:center}.footer-row{flex-direction:column;align-items:flex-start}footer small{text-align:left}.concept-note{font-size:8px;bottom:-7px}}
+    @media(max-width:700px){.footer-grants{flex-direction:column;align-items:flex-start;gap:12px}.footer-grants-link{width:235px}}
     @media(max-width:700px){.grants-callout{flex-direction:column;gap:17px;padding:23px 20px;text-align:center}.grants-logo-link{width:min(270px,100%);flex:none}.grants-content strong{font-size:17px}}
     @media(max-width:405px){.brand-name{font-size:16px}.header .nav-contact{font-size:10px;padding:7px 11px}.map-scene{height:375px}.hero-visual{height:415px}.mock-phone{left:37%;transform:translateX(-13%) rotate(-5deg)}.float-card.c1{right:-7px}.float-card.c2{left:-3px}.feature-grid{gap:11px}.hero-copy h1{font-size:3.03rem}}
     @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
@@ -333,7 +339,15 @@
 
     <section class="contact-section" id="contato" aria-labelledby="contact-title"><div class="container contact-box"><div><span class="eyebrow">Converse com o projeto</span><h2 id="contact-title">Toda grande jornada começa <em>com um encontro.</em></h2><p>Para avaliação institucional, parcerias e informações sobre o desenvolvimento do Jornada, entre em contato pelo e-mail corporativo.</p></div><a class="contact-link" href="mailto:alexsandrofreitas@jornadanabiblia.com.br?subject=Contato%20institucional%20-%20Jornada%20pela%20B%C3%ADblia">Entrar em contato <span aria-hidden="true">↗</span></a></div></section>
   </main>
-  <footer><div class="container footer-row"><div class="footer-brand">Jornada pela Bíblia</div><small>Projeto brasileiro independente em desenvolvimento · Recife, Pernambuco<br>Prévia conceitual para apresentação institucional. Recursos podem mudar antes do lançamento.</small></div></footer>
+  <footer>
+    <div class="container footer-row"><div class="footer-brand">Jornada pela Bíblia</div><small>Projeto brasileiro independente em desenvolvimento · Recife, Pernambuco<br>Prévia conceitual para apresentação institucional. Recursos podem mudar antes do lançamento.</small></div>
+    <div class="container footer-grants" aria-label="Participação no programa ElevenLabs Grants">
+      <span class="footer-grants-note">Participação no programa de apoio à tecnologia de voz</span>
+      <a class="footer-grants-link" href="https://elevenlabs.io/startup-grants" target="_blank" rel="noopener noreferrer" aria-label="Visitar o programa ElevenLabs Grants no site oficial">
+        <img src="https://eleven-public-cdn.elevenlabs.io/payloadcms/pwsc4vchsqt-ElevenLabsGrants.webp" alt="ElevenLabs Grants" loading="lazy" decoding="async">
+      </a>
+    </div>
+  </footer>
   <script>
     (function(){
       const demo=document.querySelectorAll('.demo-para');
